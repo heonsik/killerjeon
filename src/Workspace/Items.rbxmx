@@ -1,0 +1,338 @@
+<roblox version="4">
+  <Item class="Folder" referent="300127">
+    <Properties><string name="Name">Items</string></Properties>
+    <Item class="Part" referent="300106">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-20</X><Y>5</Y><Z>118</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion1</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300107">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>118</X><Y>5</Y><Z>-36</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion2</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300108">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-122</X><Y>5</Y><Z>-8</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion3</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300109">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>10</X><Y>16</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion4</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300110">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>96</X><Y>5</Y><Z>112</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion5</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300111">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-98</X><Y>27</Y><Z>-72</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion6</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300112">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.517647</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-116</X><Y>1.9</Y><Z>-18</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">JumpPad1</string>
+        <Vector3 name="Size"><X>14</X><Y>1</Y><Z>14</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300113">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.517647</B></Color3>
+        <CoordinateFrame name="CFrame"><X>116</X><Y>1.9</Y><Z>18</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">JumpPad2</string>
+        <Vector3 name="Size"><X>14</X><Y>1</Y><Z>14</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300114">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.517647</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>13.8</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">JumpPad3</string>
+        <Vector3 name="Size"><X>14</X><Y>1</Y><Z>14</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300115">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.729412</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-138</X><Y>5</Y><Z>92</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShieldOrb1</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300116">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.729412</B></Color3>
+        <CoordinateFrame name="CFrame"><X>138</X><Y>5</Y><Z>-92</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShieldOrb2</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300117">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.698039</R><G>0.490196</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-44</X><Y>31</Y><Z>-72</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DecoyBeacon1</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300118">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.698039</R><G>0.490196</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>44</X><Y>31</Y><Z>72</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DecoyBeacon2</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300119">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.878431</G><B>0.360784</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>5</Y><Z>-138</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShockOrb1</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300120">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.878431</G><B>0.360784</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>5</Y><Z>138</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShockOrb2</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300121">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.345098</G><B>0.462745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-560</X><Y>75</Y><Z>-560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EnergyCore1</string>
+        <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300122">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.345098</G><B>0.462745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>16</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EnergyCore2</string>
+        <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300123">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.345098</G><B>0.462745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>560</X><Y>75</Y><Z>560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EnergyCore3</string>
+        <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
+      </Properties>
+    </Item>
+  
+  <!-- BEGIN_EXPANDED_STATIC_WORLD -->
+    <Item class="Part" referent="910000">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-620</X><Y>5</Y><Z>-520</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion7</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910001">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>620</X><Y>5</Y><Z>520</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion8</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910002">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>5</Y><Z>-705</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion9</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910003">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.854902</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>5</Y><Z>705</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SpeedPotion10</string>
+        <Vector3 name="Size"><X>4</X><Y>4</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910004">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.729412</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-705</X><Y>5</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShieldOrb3</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910005">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.360784</R><G>1.0</G><B>0.729412</B></Color3>
+        <CoordinateFrame name="CFrame"><X>705</X><Y>5</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShieldOrb4</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910006">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.698039</R><G>0.490196</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-560</X><Y>5</Y><Z>560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DecoyBeacon3</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910007">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.698039</R><G>0.490196</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>560</X><Y>5</Y><Z>-560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DecoyBeacon4</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910008">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.878431</G><B>0.360784</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-520</X><Y>5</Y><Z>-620</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShockOrb3</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910009">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.878431</G><B>0.360784</B></Color3>
+        <CoordinateFrame name="CFrame"><X>520</X><Y>5</Y><Z>620</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ShockOrb4</string>
+        <Vector3 name="Size"><X>4.5</X><Y>4.5</Y><Z>4.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910010">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.345098</G><B>0.462745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>75</Y><Z>-705</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EnergyCore4</string>
+        <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="910011">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.345098</G><B>0.462745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>75</Y><Z>705</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EnergyCore5</string>
+        <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
+      </Properties>
+    </Item>
+  <!-- END_EXPANDED_STATIC_WORLD -->
+  </Item>
+</roblox>

@@ -1,0 +1,9 @@
+# Local editor/agent settings
+.claude/settings.local.json
+
+# Roblox Studio lock files
+*.rbxlx.lock
+
+# OS noise
+.DS_Store
+Thumbs.db

@@ -1,0 +1,104 @@
+<roblox version="4">
+  <Item class="Folder" referent="300124">
+    <Properties><string name="Name">Lobby</string></Properties>
+    <Item class="Part" referent="300001">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.188235</R><G>0.25098</G><B>0.321569</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>0</Y><Z>-390</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">LobbyFloor</string>
+        <Vector3 name="Size"><X>120</X><Y>2</Y><Z>110</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300002">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.176471</R><G>0.207843</G><B>0.266667</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>12</Y><Z>-445</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">LobbyBackWall</string>
+        <Vector3 name="Size"><X>124</X><Y>24</Y><Z>3</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300003">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.176471</R><G>0.207843</G><B>0.266667</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-60</X><Y>12</Y><Z>-390</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">LobbyLeftWall</string>
+        <Vector3 name="Size"><X>3</X><Y>24</Y><Z>114</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300004">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.176471</R><G>0.207843</G><B>0.266667</B></Color3>
+        <CoordinateFrame name="CFrame"><X>60</X><Y>12</Y><Z>-390</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">LobbyRightWall</string>
+        <Vector3 name="Size"><X>3</X><Y>24</Y><Z>114</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300005">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.772549</G><B>0.286275</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>2.5</Y><Z>-360</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StartButton</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>12</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300006">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.109804</R><G>0.129412</G><B>0.164706</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>13</Y><Z>-336</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ArenaGate</string>
+        <Vector3 name="Size"><X>46</X><Y>26</Y><Z>3</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300007">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0.05</float>
+        <Color3 name="Color"><R>1.0</R><G>0.266667</G><B>0.345098</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>27</Y><Z>-334</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">GateGlowTop</string>
+        <Vector3 name="Size"><X>52</X><Y>2</Y><Z>2</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300008">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0.05</float>
+        <Color3 name="Color"><R>0.270588</R><G>0.788235</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-26</X><Y>14</Y><Z>-334</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">GateGlowLeft</string>
+        <Vector3 name="Size"><X>2</X><Y>24</Y><Z>2</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="300009">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0.05</float>
+        <Color3 name="Color"><R>0.270588</R><G>0.788235</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>26</X><Y>14</Y><Z>-334</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">GateGlowRight</string>
+        <Vector3 name="Size"><X>2</X><Y>24</Y><Z>2</Z></Vector3>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>
