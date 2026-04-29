@@ -74,6 +74,11 @@ def strip_generated(text: str) -> str:
     end = text.find(END_MARK)
     if start == -1 or end == -1:
         return text
+    while start > 0:
+        line_start = text.rfind("\n", 0, start - 1) + 1
+        if text[line_start:start].strip():
+            break
+        start = line_start
     end += len(END_MARK)
     return text[:start] + text[end:]
 
@@ -96,6 +101,47 @@ def part_xml(ref_id: int, name: str, position, size, color, collide=True, transp
         <string name="Name">{name}</string>
         <Vector3 name="Size"><X>{sx}</X><Y>{sy}</Y><Z>{sz}</Z></Vector3>
       </Properties>
+    </Item>"""
+
+
+def point_light_xml(ref_id: int, name: str, color, brightness: float, range_: float, shadows=True) -> str:
+    return f"""      <Item class="PointLight" referent="{ref_id}">
+        <Properties>
+          <float name="Brightness">{brightness:g}</float>
+          {color_xml(color)}
+          <bool name="Enabled">true</bool>
+          <float name="Range">{range_:g}</float>
+          <bool name="Shadows">{str(shadows).lower()}</bool>
+          <string name="Name">{name}</string>
+        </Properties>
+      </Item>"""
+
+
+def light_part_xml(
+    ref_id: int,
+    light_ref_id: int,
+    name: str,
+    position,
+    size,
+    color,
+    brightness: float,
+    range_: float,
+    collide=False,
+    shadows=True,
+) -> str:
+    px, py, pz = position
+    sx, sy, sz = size
+    return f"""    <Item class="Part" referent="{ref_id}">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">{str(collide).lower()}</bool>
+        <float name="Transparency">0</float>
+        {color_xml(color)}
+        <CoordinateFrame name="CFrame"><X>{px}</X><Y>{py}</Y><Z>{pz}</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">{name}</string>
+        <Vector3 name="Size"><X>{sx}</X><Y>{sy}</Y><Z>{sz}</Z></Vector3>
+      </Properties>
+{point_light_xml(light_ref_id, name + "Light", color, brightness, range_, shadows)}
     </Item>"""
 
 
@@ -224,12 +270,76 @@ def expand_map() -> None:
         parts.append(part_xml(ref_id, f"ConnectorBeaconEW{i}", (-285, 29, z), (20, 4, 20), (0.270588, 0.788235, 1.0), False, 0.03))
         ref_id += 1
 
+    mood_lamps = [
+        ("BrightArcadeStatic", (0, 54, -610), (9, 9, 9), (0.882353, 0.960784, 1.0), 4.2, 260),
+        ("WarmToyTownStatic", (0, 42, 610), (9, 9, 9), (1.0, 0.803922, 0.494118), 3.3, 230),
+        ("DimLibraryStatic", (-610, 38, 0), (8, 8, 8), (0.454902, 0.65098, 1.0), 1.35, 170),
+        ("DuskFactoryStatic", (610, 40, 0), (8, 8, 8), (1.0, 0.462745, 0.352941), 2.2, 190),
+        ("CenterFloodStatic", (0, 64, 0), (10, 10, 10), (0.921569, 0.933333, 1.0), 3.0, 300),
+        ("NorthShadowStatic", (-560, 34, -560), (7, 7, 7), (0.556863, 0.352941, 1.0), 1.2, 145),
+        ("SouthShadowStatic", (560, 34, 560), (7, 7, 7), (0.313725, 0.490196, 0.72549), 1.1, 145),
+    ]
+    for name, position, size, color, brightness, range_ in mood_lamps:
+        parts.append(part_xml(ref_id, name + "Base", (position[0], position[1] - 6, position[2]), (18, 3, 18), (0.117647, 0.12549, 0.14902), True, 0))
+        ref_id += 1
+        parts.append(light_part_xml(ref_id, ref_id + 1, name, position, size, color, brightness, range_, False, True))
+        ref_id += 2
+
+    street_posts = [
+        ((-420, 1, -420), (1.0, 0.886275, 0.658824)),
+        ((420, 1, -420), (0.803922, 0.933333, 1.0)),
+        ((-420, 1, 420), (1.0, 0.823529, 0.501961)),
+        ((420, 1, 420), (0.823529, 1.0, 0.862745)),
+        ((-720, 1, 0), (0.588235, 0.764706, 1.0)),
+        ((720, 1, 0), (1.0, 0.568627, 0.470588)),
+        ((0, 1, -720), (0.921569, 0.921569, 1.0)),
+        ((0, 1, 720), (1.0, 0.854902, 0.588235)),
+    ]
+    for i, (position, color) in enumerate(street_posts, start=1):
+        x, _, z = position
+        parts.append(part_xml(ref_id, f"StreetPostStatic{i}", (x, 22, z), (4, 42, 4), (0.164706, 0.176471, 0.203922), True, 0))
+        ref_id += 1
+        parts.append(light_part_xml(ref_id, ref_id + 1, f"StreetLampStatic{i}", (x, 45, z), (13, 5, 13), color, 2.6, 180, False, True))
+        ref_id += 2
+
+    for i, x in enumerate((-300, -150, 0, 150, 300), start=1):
+        parts.append(light_part_xml(ref_id, ref_id + 1, f"CeilTubeStatic{i}", (x, 43, 0), (42, 2, 5), (0.823529, 0.941176, 1.0), 2.2, 150, False, False))
+        ref_id += 2
+
+    escape_parts = [
+        ("CaptiveRoomFloorStatic", (0, 16.1, 0), (260, 1, 260), (0.25098, 0.188235, 0.282353), True, 0),
+        ("CaptiveBarsStaticW", (-135, 35, 0), (10, 38, 260), (0.705882, 0.764706, 0.843137), True, 0),
+        ("CaptiveBarsStaticE", (135, 35, 0), (10, 38, 260), (0.705882, 0.764706, 0.843137), True, 0),
+        ("CaptiveBarsStaticN", (-55, 35, -135), (160, 38, 10), (0.705882, 0.764706, 0.843137), True, 0),
+        ("CaptiveBarsStaticS", (55, 35, 135), (160, 38, 10), (0.705882, 0.764706, 0.843137), True, 0),
+        ("EscapeMazeWallStatic1", (-110, 18, -260), (24, 34, 220), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic2", (120, 18, -350), (24, 34, 260), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic3", (-160, 18, -465), (260, 34, 24), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic4", (145, 18, -585), (270, 34, 24), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic5", (-220, 18, -700), (24, 34, 230), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic6", (235, 18, -720), (24, 34, 190), (0.14902, 0.172549, 0.227451), True, 0),
+        ("EscapeMazeWallStatic7", (0, 18, -770), (150, 34, 24), (0.14902, 0.172549, 0.227451), True, 0),
+        ("ExitDoorFrameStatic", (0, 26, -835), (220, 48, 12), (0.109804, 0.133333, 0.172549), True, 0),
+    ]
+    for name, position, size, color, collide, transparency in escape_parts:
+        parts.append(part_xml(ref_id, name, position, size, color, collide, transparency))
+        ref_id += 1
+
+    for name, position, size in [
+        ("ExitDoorGlowTopStatic", (0, 51, -828), (230, 4, 5)),
+        ("ExitDoorGlowLeftStatic", (-112, 28, -828), (4, 46, 5)),
+        ("ExitDoorGlowRightStatic", (112, 28, -828), (4, 46, 5)),
+        ("EscapeZoneStatic", (0, 5, -812), (170, 5, 34)),
+    ]:
+        parts.append(light_part_xml(ref_id, ref_id + 1, name, position, size, (0.345098, 1.0, 0.588235), 3.2, 145, False, False))
+        ref_id += 2
+
     MAP_PATH.write_text(insert_before_folder_close(text, "\n".join(parts)), encoding="utf-8")
 
 
 def expand_spawns() -> None:
     text = SPAWNS_PATH.read_text(encoding="utf-8")
-    text = set_part_transform(text, "GameSpawn", position=(-780, 5, -780))
+    text = set_part_transform(text, "GameSpawn", position=(0, 22, 0))
     text = set_part_transform(text, "ChaserSpawn", position=(780, 5, 780))
     SPAWNS_PATH.write_text(text, encoding="utf-8")
 

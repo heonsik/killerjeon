@@ -71,8 +71,8 @@ end
 player.CharacterAdded:Connect(onCharacterAdded)
 
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
-	if gameProcessed then return end
-	if input.KeyCode == Enum.KeyCode.LeftShift or input.KeyCode == Enum.KeyCode.Q then
+	if gameProcessed or UserInputService:GetFocusedTextBox() then return end
+	if input.KeyCode == Enum.KeyCode.LeftControl or input.KeyCode == Enum.KeyCode.RightControl then
 		startSlide()
 	end
 end)

@@ -8,10 +8,12 @@ local ItemManager = {}
 
 local getStateCallback
 local objectiveCollectedCallback
+local escapeReachedCallback
 local stunChasersCallback
 local itemConnections = {}
 local activeSpeedEffects = {}
 local activeShields = {}
+local activeFlashlights = {}
 local jumpPadCooldowns = {}
 local collectedCores = {}
 
@@ -19,9 +21,18 @@ local remotesFolder = ReplicatedStorage:FindFirstChild("Remotes") or Instance.ne
 remotesFolder.Name = "Remotes"
 remotesFolder.Parent = ReplicatedStorage
 
-local powerupChanged = remotesFolder:FindFirstChild("PowerupChanged") or Instance.new("RemoteEvent")
-powerupChanged.Name = "PowerupChanged"
-powerupChanged.Parent = remotesFolder
+local function ensureRemote(name)
+	local r = remotesFolder:FindFirstChild(name)
+	if not r then
+		r = Instance.new("RemoteEvent"); r.Name = name; r.Parent = remotesFolder
+	end
+	return r
+end
+
+local powerupChanged      = ensureRemote("PowerupChanged")
+local pickupFlashlight    = ensureRemote("PickupFlashlight")
+local flashlightConsumed  = ensureRemote("FlashlightConsumed")
+local jumpPadLaunch       = ensureRemote("JumpPadLaunch")
 
 local function ensureFolder(parent, name)
 	local folder = parent:FindFirstChild(name)
@@ -171,6 +182,12 @@ local function fireShock(player)
 	sendPowerup(player, "충격파 발동", GameConfig.ShockStunDuration)
 end
 
+local function grantFlashlight(player)
+	activeFlashlights[player] = true
+	pickupFlashlight:FireClient(player)
+	sendPowerup(player, "손전등 획득", 2.5)
+end
+
 local function collectCore(player, core)
 	if collectedCores[core] then
 		return
@@ -211,8 +228,16 @@ local function handlePickup(item, player)
 		setItemVisible(item, false)
 		fireShock(player)
 		respawnLater(item, GameConfig.ItemRespawnTime)
+	elseif itemType == "Flashlight" then
+		setItemVisible(item, false)
+		grantFlashlight(player)
+		respawnLater(item, GameConfig.FlashlightRespawnTime)
 	elseif itemType == "EnergyCore" then
 		collectCore(player, item)
+	elseif itemType == "EscapeZone" then
+		if escapeReachedCallback then
+			escapeReachedCallback(player)
+		end
 	end
 end
 
@@ -225,7 +250,12 @@ local function connectPickup(item)
 
 	local busy = false
 	itemConnections[item] = item.Touched:Connect(function(hit)
-		if busy or not item.CanTouch then
+		local itemType = item:GetAttribute("ItemType")
+		if itemType ~= "EscapeZone" and busy then
+			return
+		end
+
+		if not item.CanTouch then
 			return
 		end
 
@@ -238,7 +268,9 @@ local function connectPickup(item)
 			return
 		end
 
-		busy = true
+		if itemType ~= "EscapeZone" then
+			busy = true
+		end
 		handlePickup(item, player)
 		task.delay(0.4, function()
 			busy = false
@@ -269,8 +301,10 @@ local function connectJumpPad(pad)
 		end
 
 		jumpPadCooldowns[player] = now
+		-- 서버에서 직접 설정하면 클라이언트 물리가 덮어씀 → RemoteEvent로 클라이언트에서 적용
 		local horizontalBoost = root.CFrame.LookVector * 28
-		root.AssemblyLinearVelocity = Vector3.new(horizontalBoost.X, GameConfig.JumpPadPower, horizontalBoost.Z)
+		local launchVec = Vector3.new(horizontalBoost.X, GameConfig.JumpPadPower, horizontalBoost.Z)
+		jumpPadLaunch:FireClient(player, launchVec)
 	end)
 end
 
@@ -290,6 +324,7 @@ end
 function ItemManager.Init(options)
 	getStateCallback = options.GetState
 	objectiveCollectedCallback = options.OnObjectiveCollected
+	escapeReachedCallback = options.OnEscapeReached
 	stunChasersCallback = options.StunChasers
 
 	local itemsFolder = Workspace:WaitForChild("Items")
@@ -298,6 +333,12 @@ function ItemManager.Init(options)
 	end
 
 	itemsFolder.ChildAdded:Connect(connectItem)
+
+	local mapFolder = Workspace:WaitForChild("Map")
+	for _, item in ipairs(mapFolder:GetDescendants()) do
+		connectItem(item)
+	end
+	mapFolder.DescendantAdded:Connect(connectItem)
 end
 
 function ItemManager.ResetRound()
@@ -337,9 +378,19 @@ function ItemManager.BlockElimination(player)
 	return true
 end
 
+function ItemManager.HasFlashlight(player)
+	return activeFlashlights[player] == true
+end
+
+function ItemManager.UseFlashlight(player)
+	activeFlashlights[player] = nil
+	flashlightConsumed:FireClient(player)
+end
+
 function ItemManager.ResetPlayer(player)
 	activeSpeedEffects[player] = nil
 	activeShields[player] = nil
+	activeFlashlights[player] = nil
 	jumpPadCooldowns[player] = nil
 
 	local character = player.Character

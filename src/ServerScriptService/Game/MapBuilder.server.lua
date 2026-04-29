@@ -118,6 +118,23 @@ local function createHazardTile(parent, name, position, size)
 	light.Brightness = 1.2; light.Range = 25; light.Color = tile.Color; light.Parent = tile
 end
 
+local function createEscapeZone(parent, name, position)
+	local zone = createPart(parent, name, Vector3.new(170, 5, 34),
+		CFrame.new(position), Color3.fromRGB(88, 255, 150), Enum.Material.Neon)
+	zone.CanCollide = false
+	zone.Transparency = 0.16
+	zone:SetAttribute("ItemType", "EscapeZone")
+
+	local light = Instance.new("PointLight")
+	light.Brightness = 4
+	light.Range = 170
+	light.Color = zone.Color
+	light.Parent = zone
+
+	createLabel(zone, "탈출구", UDim2.fromOffset(170, 42), Vector3.new(0, 7, 0))
+	return zone
+end
+
 -- ───────────────────────────── floor & walls ─────────────────────────────────
 
 local function addFloorPatterns(mapFolder, hx, hz)
@@ -326,6 +343,59 @@ local function addCorridorCover(mapFolder)
 	end
 end
 
+local function addEscapeMaze(mapFolder)
+	local wallColor = Color3.fromRGB(38, 44, 58)
+	local barColor = Color3.fromRGB(180, 195, 215)
+	local dangerColor = Color3.fromRGB(255, 72, 72)
+
+	createPart(mapFolder, "CaptiveRoomFloor", Vector3.new(260, 1, 260), CFrame.new(0, 16.1, 0), Color3.fromRGB(64, 48, 72), Enum.Material.Metal)
+	for i, data in ipairs({
+		{Vector3.new(-135, 35, 0), Vector3.new(10, 38, 260)},
+		{Vector3.new(135, 35, 0), Vector3.new(10, 38, 260)},
+		{Vector3.new(-55, 35, -135), Vector3.new(160, 38, 10)},
+		{Vector3.new(55, 35, 135), Vector3.new(160, 38, 10)},
+	}) do
+		createPart(mapFolder, "CaptiveBars" .. i, data[2], CFrame.new(data[1]), barColor, Enum.Material.Metal)
+	end
+	createNeonStrip(mapFolder, "BrokenGateHint", Vector3.new(76, 2, 5), CFrame.new(0, 38, -135), Color3.fromRGB(88, 255, 150))
+
+	for i, data in ipairs({
+		{Vector3.new(-110, 18, -260), Vector3.new(24, 34, 220)},
+		{Vector3.new(120, 18, -350), Vector3.new(24, 34, 260)},
+		{Vector3.new(-160, 18, -465), Vector3.new(260, 34, 24)},
+		{Vector3.new(145, 18, -585), Vector3.new(270, 34, 24)},
+		{Vector3.new(-220, 18, -700), Vector3.new(24, 34, 230)},
+		{Vector3.new(235, 18, -720), Vector3.new(24, 34, 190)},
+		{Vector3.new(0, 18, -770), Vector3.new(150, 34, 24)},
+		{Vector3.new(-330, 18, -330), Vector3.new(24, 34, 260)},
+		{Vector3.new(330, 18, -420), Vector3.new(24, 34, 260)},
+		{Vector3.new(-430, 18, -610), Vector3.new(210, 34, 24)},
+		{Vector3.new(430, 18, -660), Vector3.new(210, 34, 24)},
+	}) do
+		createPart(mapFolder, "EscapeMazeWall" .. i, data[2], CFrame.new(data[1]), wallColor, Enum.Material.Concrete)
+	end
+
+	for i, z in ipairs({-230, -420, -610}) do
+		local beam = createNeonStrip(mapFolder, "AlarmBeam" .. i, Vector3.new(72, 1.6, 1.6), CFrame.new((i % 2 == 0) and 95 or -95, 15, z), dangerColor)
+		beam.Transparency = 0.18
+	end
+
+	for i, pos in ipairs({
+		Vector3.new(-70, 2, -230),
+		Vector3.new(95, 2, -390),
+		Vector3.new(-85, 2, -540),
+		Vector3.new(90, 2, -690),
+	}) do
+		createHazardTile(mapFolder, "EscapeShock" .. i, pos, Vector3.new(72, 0.4, 28))
+	end
+
+	createPart(mapFolder, "ExitDoorFrame", Vector3.new(220, 48, 12), CFrame.new(0, 26, -835), Color3.fromRGB(28, 34, 44), Enum.Material.Metal)
+	createNeonStrip(mapFolder, "ExitDoorGlowTop", Vector3.new(230, 4, 5), CFrame.new(0, 51, -828), Color3.fromRGB(88, 255, 150))
+	createNeonStrip(mapFolder, "ExitDoorGlowLeft", Vector3.new(4, 46, 5), CFrame.new(-112, 28, -828), Color3.fromRGB(88, 255, 150))
+	createNeonStrip(mapFolder, "ExitDoorGlowRight", Vector3.new(4, 46, 5), CFrame.new(112, 28, -828), Color3.fromRGB(88, 255, 150))
+	createEscapeZone(mapFolder, "EscapeZone", Vector3.new(0, 5, -812))
+end
+
 -- ─────────────────────────── 세트피스 & 위험구역 ─────────────────────────────
 
 local function addSetPieces(mapFolder)
@@ -335,7 +405,7 @@ local function addSetPieces(mapFolder)
 	createNeonStrip(mapFolder, "GateTop", Vector3.new(178,4,4),  CFrame.new(0,38,-797),   Color3.fromRGB(255,215,74))
 	local gp = createPart(mapFolder, "GateLabelAnchor", Vector3.new(1,1,1), CFrame.new(0,40,-797), Color3.fromRGB(255,215,74), Enum.Material.Neon)
 	gp.Transparency = 1; gp.CanCollide = false
-	createLabel(gp, "코어 3개 수집", UDim2.fromOffset(260,46), Vector3.new(0,0,0))
+	createLabel(gp, "북쪽 탈출구로 이동", UDim2.fromOffset(280,46), Vector3.new(0,0,0))
 
 	for i, z in ipairs({-600, -300, 300, 600}) do
 		createPart(mapFolder, "LaserPostL"..i, Vector3.new(10,24,10), CFrame.new(-22,13,z), Color3.fromRGB(28,33,42), Enum.Material.Metal)
@@ -353,21 +423,60 @@ end
 -- ──────────────────────── 조명 ───────────────────────────────────────────────
 
 local function addLights(mapFolder)
-	for i, d in ipairs({
-		{Vector3.new(-550,41,-550), Color3.fromRGB(255,62,62)},
-		{Vector3.new( 550,41,-550), Color3.fromRGB(69,201,255)},
-		{Vector3.new(-550,41, 550), Color3.fromRGB(255,215,74)},
-		{Vector3.new( 550,41, 550), Color3.fromRGB(119,255,157)},
-	}) do
-		createPart(mapFolder, "AlarmBase"..i, Vector3.new(10,3,10), CFrame.new(d[1]), Color3.fromRGB(30,30,36), Enum.Material.Metal)
-		local lamp = createPart(mapFolder, "AlarmLamp"..i, Vector3.new(6,6,6), CFrame.new(d[1]+Vector3.new(0,5,0)), d[2], Enum.Material.Neon)
-		lamp.Shape = Enum.PartType.Ball; lamp.CanCollide = false
-		local pt = Instance.new("PointLight"); pt.Brightness = 3; pt.Range = 100; pt.Color = d[2]; pt.Parent = lamp
+	local moodLamps = {
+		{"BrightArcade", Vector3.new(0, 48, -610), Color3.fromRGB(225, 245, 255), 4.2, 260},
+		{"WarmToyTown", Vector3.new(0, 36, 610), Color3.fromRGB(255, 205, 126), 3.3, 230},
+		{"DimLibrary", Vector3.new(-610, 32, 0), Color3.fromRGB(116, 166, 255), 1.35, 170},
+		{"DuskFactory", Vector3.new(610, 34, 0), Color3.fromRGB(255, 118, 90), 2.2, 190},
+		{"CenterFlood", Vector3.new(0, 58, 0), Color3.fromRGB(235, 238, 255), 3.0, 300},
+		{"NorthShadow", Vector3.new(-560, 28, -560), Color3.fromRGB(142, 90, 255), 1.2, 145},
+		{"SouthShadow", Vector3.new(560, 28, 560), Color3.fromRGB(80, 125, 185), 1.1, 145},
+	}
+
+	for _, data in ipairs(moodLamps) do
+		local name, position, color, brightness, range = data[1], data[2], data[3], data[4], data[5]
+		createPart(mapFolder, name .. "Base", Vector3.new(18, 3, 18), CFrame.new(position), Color3.fromRGB(30, 32, 38), Enum.Material.Metal)
+		local lamp = createPart(mapFolder, name .. "Lamp", Vector3.new(9, 9, 9), CFrame.new(position + Vector3.new(0, 6, 0)), color, Enum.Material.Neon)
+		lamp.Shape = Enum.PartType.Ball
+		lamp.CanCollide = false
+		local point = Instance.new("PointLight")
+		point.Name = name .. "Light"
+		point.Brightness = brightness
+		point.Range = range
+		point.Color = color
+		point.Shadows = true
+		point.Parent = lamp
 	end
+
+	local streetPosts = {
+		{Vector3.new(-420, 1, -420), Color3.fromRGB(255, 226, 168)},
+		{Vector3.new( 420, 1, -420), Color3.fromRGB(205, 238, 255)},
+		{Vector3.new(-420, 1,  420), Color3.fromRGB(255, 210, 128)},
+		{Vector3.new( 420, 1,  420), Color3.fromRGB(210, 255, 220)},
+		{Vector3.new(-720, 1,    0), Color3.fromRGB(150, 195, 255)},
+		{Vector3.new( 720, 1,    0), Color3.fromRGB(255, 145, 120)},
+		{Vector3.new(   0, 1, -720), Color3.fromRGB(235, 235, 255)},
+		{Vector3.new(   0, 1,  720), Color3.fromRGB(255, 218, 150)},
+	}
+
+	for i, data in ipairs(streetPosts) do
+		local position, color = data[1], data[2]
+		createPart(mapFolder, "StreetPost" .. i, Vector3.new(4, 42, 4), CFrame.new(position + Vector3.new(0, 21, 0)), Color3.fromRGB(42, 45, 52), Enum.Material.Metal)
+		local head = createPart(mapFolder, "StreetLamp" .. i, Vector3.new(13, 5, 13), CFrame.new(position + Vector3.new(0, 44, 0)), color, Enum.Material.Neon)
+		head.CanCollide = false
+		local light = Instance.new("PointLight")
+		light.Name = "StreetLight" .. i
+		light.Brightness = 2.6
+		light.Range = 180
+		light.Color = color
+		light.Shadows = true
+		light.Parent = head
+	end
+
 	createPart(mapFolder, "CeilRig", Vector3.new(700,3,12), CFrame.new(0,43,0), Color3.fromRGB(38,42,54), Enum.Material.Metal)
 	for i, x in ipairs({-290,-145,0,145,290}) do
 		local tube = createNeonStrip(mapFolder, "CeilTube"..i, Vector3.new(38,1.5,4), CFrame.new(x,42,0), Color3.fromRGB(210,240,255))
-		local pt = Instance.new("PointLight"); pt.Brightness = 1.6; pt.Range = 120; pt.Color = tube.Color; pt.Parent = tube
+		local pt = Instance.new("PointLight"); pt.Brightness = 2.2; pt.Range = 150; pt.Color = tube.Color; pt.Shadows = false; pt.Parent = tube
 	end
 end
 
@@ -418,17 +527,21 @@ local function buildRoom(mapFolder, spawnsFolder, itemsFolder)
 	buildSEPlayroom(mapFolder)
 	buildCentralHub(mapFolder)
 	addCorridorCover(mapFolder)
+	addEscapeMaze(mapFolder)
 	addSetPieces(mapFolder)
 	addLights(mapFolder)
 
-	createSpawn(spawnsFolder, "GameSpawn",   Vector3.new(-750,5,-750), Color3.fromRGB(69,201,255))
-	createSpawn(spawnsFolder, "ChaserSpawn", Vector3.new( 750,5, 750), Color3.fromRGB(255,75,75))
+	createSpawn(spawnsFolder, "GameSpawn",   Vector3.new(0,22,0), Color3.fromRGB(88,255,150))
+	createSpawn(spawnsFolder, "ChaserSpawn", Vector3.new( 760,5, 760), Color3.fromRGB(255,75,75))
 
-	-- 점프패드
-	createJumpPad(itemsFolder, "JumpPad_Center", Vector3.new(  0,16.5,  0))
-	createJumpPad(itemsFolder, "JumpPad_NE",     Vector3.new(650,1.9,-650), Color3.fromRGB(255,215,74))
-	createJumpPad(itemsFolder, "JumpPad_SW",     Vector3.new(-650,1.9,650), Color3.fromRGB(255,215,74))
-	createJumpPad(itemsFolder, "JumpPad_Bridge", Vector3.new(  0,42, 140))
+	-- 점프패드 (각 Y = 지면/플랫폼 top + 0.5 — 패드 높이 1의 절반)
+	-- CenterPlatform top = 8+7 = 15  →  패드 center = 15.5
+	-- RoomFloor top = 1              →  패드 center =  1.5
+	-- HighBridge top = 38+3 = 41     →  패드 center = 41.5
+	createJumpPad(itemsFolder, "JumpPad_Center", Vector3.new(  0, 15.5,   0))
+	createJumpPad(itemsFolder, "JumpPad_NE",     Vector3.new(650,  1.5, -650), Color3.fromRGB(255,215,74))
+	createJumpPad(itemsFolder, "JumpPad_SW",     Vector3.new(-650, 1.5,  650), Color3.fromRGB(255,215,74))
+	createJumpPad(itemsFolder, "JumpPad_Bridge", Vector3.new(  0, 41.5,  140))
 
 	-- 속도 포션 8개
 	for i, pos in ipairs({
@@ -461,18 +574,102 @@ local function buildRoom(mapFolder, spawnsFolder, itemsFolder)
 	createPickupOrb(itemsFolder, "Core1", "EnergyCore", "코어", Vector3.new(-650,16,-650), Color3.fromRGB(255,88,118), 6.5)
 	createPickupOrb(itemsFolder, "Core2", "EnergyCore", "코어", Vector3.new(   0,42,   0), Color3.fromRGB(255,88,118), 6.5)
 	createPickupOrb(itemsFolder, "Core3", "EnergyCore", "코어", Vector3.new( 640,16, 640), Color3.fromRGB(255,88,118), 6.5)
+
+	-- 손전등 5개
+	for i, pos in ipairs({
+		Vector3.new(-500, 5, -500),
+		Vector3.new( 500, 5,  500),
+		Vector3.new(-500, 5,  400),
+		Vector3.new( 400, 5, -500),
+		Vector3.new(   0,16,  300),
+	}) do
+		local body = Instance.new("Part")
+		body.Name = "Flashlight" .. i
+		body.Size = Vector3.new(0.5, 0.5, 2.2)
+		body.CFrame = CFrame.new(pos) * CFrame.Angles(0, math.rad(i * 37), 0)
+		body.Color = Color3.fromRGB(42, 42, 42)
+		body.Material = Enum.Material.Metal
+		body.Anchored = true
+		body.CanCollide = false
+		body:SetAttribute("ItemType", "Flashlight")
+		body:SetAttribute("BaseTransparency", 0)
+		body.Parent = itemsFolder
+
+		local tip = Instance.new("Part")
+		tip.Name = "Tip"
+		tip.Size = Vector3.new(0.55, 0.55, 0.35)
+		tip.Color = Color3.fromRGB(255, 230, 140)
+		tip.Material = Enum.Material.Neon
+		tip.Anchored = true
+		tip.CanCollide = false
+		tip.CFrame = body.CFrame * CFrame.new(0, 0, -1.28)
+		tip.Parent = itemsFolder
+
+		local light = Instance.new("PointLight")
+		light.Brightness = 3
+		light.Range = 22
+		light.Color = Color3.fromRGB(255, 230, 140)
+		light.Parent = tip
+
+		local gui = Instance.new("BillboardGui")
+		gui.Size = UDim2.fromOffset(90, 26)
+		gui.StudsOffset = Vector3.new(0, 2.5, 0)
+		gui.AlwaysOnTop = true
+		gui.Parent = body
+		local lbl = Instance.new("TextLabel")
+		lbl.Size = UDim2.fromScale(1, 1)
+		lbl.BackgroundTransparency = 1
+		lbl.Text = "손전등"
+		lbl.TextColor3 = Color3.fromRGB(255, 230, 140)
+		lbl.TextScaled = true
+		lbl.Font = Enum.Font.GothamBold
+		lbl.Parent = gui
+	end
 end
 
 -- ─────────────────────────── 조명 설정 ───────────────────────────────────────
 
 local function configureLighting()
-	Lighting.ClockTime = 20.7
-	Lighting.Brightness = 2
-	Lighting.Ambient = Color3.fromRGB(40, 45, 60)
-	Lighting.OutdoorAmbient = Color3.fromRGB(18, 22, 32)
-	Lighting.FogColor = Color3.fromRGB(30, 36, 48)
-	Lighting.FogStart = 400
-	Lighting.FogEnd = 1600
+	for _, child in ipairs(Lighting:GetChildren()) do
+		if child.Name == "KillerJeonBloom"
+			or child.Name == "KillerJeonColor"
+			or child.Name == "KillerJeonAtmosphere" then
+			child:Destroy()
+		end
+	end
+
+	Lighting.ClockTime = 18.4
+	Lighting.Brightness = 2.15
+	Lighting.ExposureCompensation = 0.25
+	Lighting.Ambient = Color3.fromRGB(72, 76, 92)
+	Lighting.OutdoorAmbient = Color3.fromRGB(52, 58, 74)
+	Lighting.FogColor = Color3.fromRGB(52, 58, 78)
+	Lighting.FogStart = 650
+	Lighting.FogEnd = 1900
+
+	local bloom = Instance.new("BloomEffect")
+	bloom.Name = "KillerJeonBloom"
+	bloom.Intensity = 0.22
+	bloom.Size = 22
+	bloom.Threshold = 1.1
+	bloom.Parent = Lighting
+
+	local colorCorrection = Instance.new("ColorCorrectionEffect")
+	colorCorrection.Name = "KillerJeonColor"
+	colorCorrection.Saturation = 0.04
+	colorCorrection.TintColor = Color3.fromRGB(235, 236, 255)
+	colorCorrection.Brightness = 0.04
+	colorCorrection.Parent = Lighting
+
+	local atmosphere = Instance.new("Atmosphere")
+	atmosphere.Name = "KillerJeonAtmosphere"
+	atmosphere.Density = 0.24
+	atmosphere.Offset = 0.18
+	atmosphere.Color = Color3.fromRGB(200, 210, 255)
+	atmosphere.Decay = Color3.fromRGB(92, 80, 120)
+	atmosphere.Glare = 0.08
+	atmosphere.Haze = 1.4
+	atmosphere.Parent = Lighting
 end
 
 -- ───────────────────────────── 실행 ──────────────────────────────────────────

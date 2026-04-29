@@ -1024,7 +1024,7 @@
         <Vector3 name="Size"><X>18</X><Y>0.35</Y><Z>34</Z></Vector3>
       </Properties>
     </Item>
-  
+
   <!-- BEGIN_EXPANDED_STATIC_WORLD -->
     <Item class="Part" referent="900000">
       <Properties>
@@ -6393,6 +6393,818 @@
         <string name="Name">ConnectorBeaconEW6</string>
         <Vector3 name="Size"><X>20</X><Y>4</Y><Z>20</Z></Vector3>
       </Properties>
+    </Item>
+    <Item class="Part" referent="900488">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>48</Y><Z>-610</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">BrightArcadeStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900489">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.882353</R><G>0.960784</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>54</Y><Z>-610</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">BrightArcadeStatic</string>
+        <Vector3 name="Size"><X>9</X><Y>9</Y><Z>9</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900490">
+        <Properties>
+          <float name="Brightness">4.2</float>
+          <Color3 name="Color"><R>0.882353</R><G>0.960784</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">260</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">BrightArcadeStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900491">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>36</Y><Z>610</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">WarmToyTownStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900492">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.803922</G><B>0.494118</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>42</Y><Z>610</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">WarmToyTownStatic</string>
+        <Vector3 name="Size"><X>9</X><Y>9</Y><Z>9</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900493">
+        <Properties>
+          <float name="Brightness">3.3</float>
+          <Color3 name="Color"><R>1.0</R><G>0.803922</G><B>0.494118</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">230</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">WarmToyTownStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900494">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-610</X><Y>32</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DimLibraryStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900495">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.454902</R><G>0.65098</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-610</X><Y>38</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DimLibraryStatic</string>
+        <Vector3 name="Size"><X>8</X><Y>8</Y><Z>8</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900496">
+        <Properties>
+          <float name="Brightness">1.35</float>
+          <Color3 name="Color"><R>0.454902</R><G>0.65098</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">170</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">DimLibraryStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900497">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>610</X><Y>34</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DuskFactoryStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900498">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.462745</G><B>0.352941</B></Color3>
+        <CoordinateFrame name="CFrame"><X>610</X><Y>40</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">DuskFactoryStatic</string>
+        <Vector3 name="Size"><X>8</X><Y>8</Y><Z>8</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900499">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>1.0</R><G>0.462745</G><B>0.352941</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">190</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">DuskFactoryStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900500">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>58</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CenterFloodStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900501">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.921569</R><G>0.933333</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>64</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CenterFloodStatic</string>
+        <Vector3 name="Size"><X>10</X><Y>10</Y><Z>10</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900502">
+        <Properties>
+          <float name="Brightness">3</float>
+          <Color3 name="Color"><R>0.921569</R><G>0.933333</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">300</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">CenterFloodStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900503">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-560</X><Y>28</Y><Z>-560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">NorthShadowStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900504">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.556863</R><G>0.352941</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-560</X><Y>34</Y><Z>-560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">NorthShadowStatic</string>
+        <Vector3 name="Size"><X>7</X><Y>7</Y><Z>7</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900505">
+        <Properties>
+          <float name="Brightness">1.2</float>
+          <Color3 name="Color"><R>0.556863</R><G>0.352941</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">NorthShadowStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900506">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.117647</R><G>0.12549</G><B>0.14902</B></Color3>
+        <CoordinateFrame name="CFrame"><X>560</X><Y>28</Y><Z>560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SouthShadowStaticBase</string>
+        <Vector3 name="Size"><X>18</X><Y>3</Y><Z>18</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900507">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.313725</R><G>0.490196</G><B>0.72549</B></Color3>
+        <CoordinateFrame name="CFrame"><X>560</X><Y>34</Y><Z>560</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">SouthShadowStatic</string>
+        <Vector3 name="Size"><X>7</X><Y>7</Y><Z>7</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900508">
+        <Properties>
+          <float name="Brightness">1.1</float>
+          <Color3 name="Color"><R>0.313725</R><G>0.490196</G><B>0.72549</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">SouthShadowStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900509">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-420</X><Y>22</Y><Z>-420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic1</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900510">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.886275</G><B>0.658824</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-420</X><Y>45</Y><Z>-420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic1</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900511">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>1.0</R><G>0.886275</G><B>0.658824</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic1Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900512">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>420</X><Y>22</Y><Z>-420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic2</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900513">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.803922</R><G>0.933333</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>420</X><Y>45</Y><Z>-420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic2</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900514">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>0.803922</R><G>0.933333</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic2Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900515">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-420</X><Y>22</Y><Z>420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic3</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900516">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.823529</G><B>0.501961</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-420</X><Y>45</Y><Z>420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic3</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900517">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>1.0</R><G>0.823529</G><B>0.501961</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic3Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900518">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>420</X><Y>22</Y><Z>420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic4</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900519">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>1.0</G><B>0.862745</B></Color3>
+        <CoordinateFrame name="CFrame"><X>420</X><Y>45</Y><Z>420</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic4</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900520">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>0.823529</R><G>1.0</G><B>0.862745</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic4Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900521">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-720</X><Y>22</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic5</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900522">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.588235</R><G>0.764706</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-720</X><Y>45</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic5</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900523">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>0.588235</R><G>0.764706</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic5Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900524">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>720</X><Y>22</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic6</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900525">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.568627</G><B>0.470588</B></Color3>
+        <CoordinateFrame name="CFrame"><X>720</X><Y>45</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic6</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900526">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>1.0</R><G>0.568627</G><B>0.470588</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic6Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900527">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>22</Y><Z>-720</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic7</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900528">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.921569</R><G>0.921569</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>45</Y><Z>-720</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic7</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900529">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>0.921569</R><G>0.921569</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic7Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900530">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.164706</R><G>0.176471</G><B>0.203922</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>22</Y><Z>720</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetPostStatic8</string>
+        <Vector3 name="Size"><X>4</X><Y>42</Y><Z>4</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900531">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>1.0</R><G>0.854902</G><B>0.588235</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>45</Y><Z>720</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">StreetLampStatic8</string>
+        <Vector3 name="Size"><X>13</X><Y>5</Y><Z>13</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900532">
+        <Properties>
+          <float name="Brightness">2.6</float>
+          <Color3 name="Color"><R>1.0</R><G>0.854902</G><B>0.588235</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">180</float>
+          <bool name="Shadows">true</bool>
+          <string name="Name">StreetLampStatic8Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900533">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-300</X><Y>43</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CeilTubeStatic1</string>
+        <Vector3 name="Size"><X>42</X><Y>2</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900534">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">150</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">CeilTubeStatic1Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900535">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-150</X><Y>43</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CeilTubeStatic2</string>
+        <Vector3 name="Size"><X>42</X><Y>2</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900536">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">150</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">CeilTubeStatic2Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900537">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>43</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CeilTubeStatic3</string>
+        <Vector3 name="Size"><X>42</X><Y>2</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900538">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">150</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">CeilTubeStatic3Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900539">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>150</X><Y>43</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CeilTubeStatic4</string>
+        <Vector3 name="Size"><X>42</X><Y>2</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900540">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">150</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">CeilTubeStatic4Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900541">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+        <CoordinateFrame name="CFrame"><X>300</X><Y>43</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CeilTubeStatic5</string>
+        <Vector3 name="Size"><X>42</X><Y>2</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900542">
+        <Properties>
+          <float name="Brightness">2.2</float>
+          <Color3 name="Color"><R>0.823529</R><G>0.941176</G><B>1.0</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">150</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">CeilTubeStatic5Light</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900543">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.25098</R><G>0.188235</G><B>0.282353</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>16.1</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CaptiveRoomFloorStatic</string>
+        <Vector3 name="Size"><X>260</X><Y>1</Y><Z>260</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900544">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.705882</R><G>0.764706</G><B>0.843137</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-135</X><Y>35</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CaptiveBarsStaticW</string>
+        <Vector3 name="Size"><X>10</X><Y>38</Y><Z>260</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900545">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.705882</R><G>0.764706</G><B>0.843137</B></Color3>
+        <CoordinateFrame name="CFrame"><X>135</X><Y>35</Y><Z>0</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CaptiveBarsStaticE</string>
+        <Vector3 name="Size"><X>10</X><Y>38</Y><Z>260</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900546">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.705882</R><G>0.764706</G><B>0.843137</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-55</X><Y>35</Y><Z>-135</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CaptiveBarsStaticN</string>
+        <Vector3 name="Size"><X>160</X><Y>38</Y><Z>10</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900547">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.705882</R><G>0.764706</G><B>0.843137</B></Color3>
+        <CoordinateFrame name="CFrame"><X>55</X><Y>35</Y><Z>135</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">CaptiveBarsStaticS</string>
+        <Vector3 name="Size"><X>160</X><Y>38</Y><Z>10</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900548">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-110</X><Y>18</Y><Z>-260</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic1</string>
+        <Vector3 name="Size"><X>24</X><Y>34</Y><Z>220</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900549">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>120</X><Y>18</Y><Z>-350</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic2</string>
+        <Vector3 name="Size"><X>24</X><Y>34</Y><Z>260</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900550">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-160</X><Y>18</Y><Z>-465</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic3</string>
+        <Vector3 name="Size"><X>260</X><Y>34</Y><Z>24</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900551">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>145</X><Y>18</Y><Z>-585</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic4</string>
+        <Vector3 name="Size"><X>270</X><Y>34</Y><Z>24</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900552">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-220</X><Y>18</Y><Z>-700</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic5</string>
+        <Vector3 name="Size"><X>24</X><Y>34</Y><Z>230</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900553">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>235</X><Y>18</Y><Z>-720</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic6</string>
+        <Vector3 name="Size"><X>24</X><Y>34</Y><Z>190</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900554">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.14902</R><G>0.172549</G><B>0.227451</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>18</Y><Z>-770</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeMazeWallStatic7</string>
+        <Vector3 name="Size"><X>150</X><Y>34</Y><Z>24</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900555">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">true</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.109804</R><G>0.133333</G><B>0.172549</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>26</Y><Z>-835</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ExitDoorFrameStatic</string>
+        <Vector3 name="Size"><X>220</X><Y>48</Y><Z>12</Z></Vector3>
+      </Properties>
+    </Item>
+    <Item class="Part" referent="900556">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>51</Y><Z>-828</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ExitDoorGlowTopStatic</string>
+        <Vector3 name="Size"><X>230</X><Y>4</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900557">
+        <Properties>
+          <float name="Brightness">3.2</float>
+          <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">ExitDoorGlowTopStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900558">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+        <CoordinateFrame name="CFrame"><X>-112</X><Y>28</Y><Z>-828</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ExitDoorGlowLeftStatic</string>
+        <Vector3 name="Size"><X>4</X><Y>46</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900559">
+        <Properties>
+          <float name="Brightness">3.2</float>
+          <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">ExitDoorGlowLeftStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900560">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+        <CoordinateFrame name="CFrame"><X>112</X><Y>28</Y><Z>-828</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">ExitDoorGlowRightStatic</string>
+        <Vector3 name="Size"><X>4</X><Y>46</Y><Z>5</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900561">
+        <Properties>
+          <float name="Brightness">3.2</float>
+          <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">ExitDoorGlowRightStaticLight</string>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="Part" referent="900562">
+      <Properties>
+        <bool name="Anchored">true</bool>
+        <bool name="CanCollide">false</bool>
+        <float name="Transparency">0</float>
+        <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+        <CoordinateFrame name="CFrame"><X>0</X><Y>5</Y><Z>-812</Z><R00>1.0</R00><R01>0.0</R01><R02>0.0</R02><R10>0</R10><R11>1.0</R11><R12>-0.0</R12><R20>-0.0</R20><R21>0.0</R21><R22>1.0</R22></CoordinateFrame>
+        <string name="Name">EscapeZoneStatic</string>
+        <Vector3 name="Size"><X>170</X><Y>5</Y><Z>34</Z></Vector3>
+      </Properties>
+      <Item class="PointLight" referent="900563">
+        <Properties>
+          <float name="Brightness">3.2</float>
+          <Color3 name="Color"><R>0.345098</R><G>1.0</G><B>0.588235</B></Color3>
+          <bool name="Enabled">true</bool>
+          <float name="Range">145</float>
+          <bool name="Shadows">false</bool>
+          <string name="Name">EscapeZoneStaticLight</string>
+        </Properties>
+      </Item>
     </Item>
   <!-- END_EXPANDED_STATIC_WORLD -->
   </Item>

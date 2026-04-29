@@ -199,7 +199,7 @@
         <Vector3 name="Size"><X>5.5</X><Y>5.5</Y><Z>5.5</Z></Vector3>
       </Properties>
     </Item>
-  
+
   <!-- BEGIN_EXPANDED_STATIC_WORLD -->
     <Item class="Part" referent="910000">
       <Properties>

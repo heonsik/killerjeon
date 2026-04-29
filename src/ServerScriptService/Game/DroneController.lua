@@ -14,36 +14,37 @@ local eliminateCallback
 local stunnedUntil = 0
 local lastTouchByPlayer = {}
 
+-- 드론은 Y=50 (벽 높이 42 초과) 에서 비행 → 벽 통과 없음
 local patrolRoutes = {
 	{
-		Vector3.new(-760, 6, 760),
-		Vector3.new(-760, 6, 260),
-		Vector3.new(-540, 6, -240),
-		Vector3.new(-760, 6, -760),
+		Vector3.new(-180, 50, -180),
+		Vector3.new(140,  50, -360),
+		Vector3.new(-160, 50, -540),
+		Vector3.new(80,   50, -735),
 	},
 	{
-		Vector3.new(760, 6, -760),
-		Vector3.new(760, 6, -260),
-		Vector3.new(540, 6, 240),
-		Vector3.new(760, 6, 760),
+		Vector3.new(180,  50, -180),
+		Vector3.new(-120, 50, -360),
+		Vector3.new(170,  50, -560),
+		Vector3.new(-75,  50, -760),
 	},
 	{
-		Vector3.new(-620, 6, -620),
-		Vector3.new(0, 6, -760),
-		Vector3.new(620, 6, -620),
-		Vector3.new(0, 6, -320),
+		Vector3.new(-620, 50, -620),
+		Vector3.new(0,    50, -820),
+		Vector3.new(620,  50, -620),
+		Vector3.new(0,    50, -320),
 	},
 	{
-		Vector3.new(620, 6, 620),
-		Vector3.new(0, 6, 760),
-		Vector3.new(-620, 6, 620),
-		Vector3.new(0, 6, 320),
+		Vector3.new(620,  50,  620),
+		Vector3.new(0,    50,  760),
+		Vector3.new(-620, 50,  620),
+		Vector3.new(0,    50,  320),
 	},
 	{
-		Vector3.new(-520, 6, 0),
-		Vector3.new(0, 6, 520),
-		Vector3.new(520, 6, 0),
-		Vector3.new(0, 6, -520),
+		Vector3.new(-520, 50,    0),
+		Vector3.new(0,    50,  520),
+		Vector3.new(520,  50,    0),
+		Vector3.new(0,    50, -520),
 	},
 }
 
@@ -142,6 +143,13 @@ local function getPlayerRoot(player)
 	return character and character:FindFirstChild("HumanoidRootPart")
 end
 
+-- 드론은 Y=50 상공에서 비행하므로 수평 거리로만 판정
+local function hDist2D(a, b)
+	local dx = a.X - b.X
+	local dz = a.Z - b.Z
+	return math.sqrt(dx * dx + dz * dz)
+end
+
 local function findNearestAlivePlayer(fromPosition)
 	local nearestPlayer = nil
 	local nearestDistance = math.huge
@@ -150,7 +158,7 @@ local function findNearestAlivePlayer(fromPosition)
 		if isAliveCallback and isAliveCallback(player) then
 			local root = getPlayerRoot(player)
 			if root then
-				local distance = (root.Position - fromPosition).Magnitude
+				local distance = hDist2D(root.Position, fromPosition)
 				if distance < nearestDistance then
 					nearestPlayer = player
 					nearestDistance = distance
@@ -203,7 +211,8 @@ local function checkPlayerHits(drone)
 		if isAliveCallback and isAliveCallback(player) then
 			local root = getPlayerRoot(player)
 			if root then
-				local distance = (root.Position - drone.Body.Position).Magnitude
+				-- 수평 거리만 사용: 드론이 Y=50이므로 3D 거리로는 절대 터치 불가
+				local distance = hDist2D(root.Position, drone.Body.Position)
 				if distance <= GameConfig.DroneTouchRadius then
 					local now = os.clock()
 					local lastTouch = lastTouchByPlayer[player] or 0
@@ -224,10 +233,11 @@ function DroneController.Init(options)
 	eliminateCallback = options.EliminatePlayer
 end
 
-function DroneController.Spawn()
+function DroneController.Spawn(count)
 	DroneController.Despawn()
+	count = math.min(count or GameConfig.DroneCount, #patrolRoutes)
 
-	for index = 1, GameConfig.DroneCount do
+	for index = 1, count do
 		local route = patrolRoutes[index]
 		if route then
 			table.insert(drones, createDrone(index, route[1]))
@@ -255,7 +265,7 @@ function DroneController.Start()
 				if not root then
 					drone.ChaseTarget = nil
 				else
-					local distance = (root.Position - drone.Body.Position).Magnitude
+					local distance = hDist2D(root.Position, drone.Body.Position)
 					if distance > GameConfig.DroneReturnRange then
 						drone.ChaseTarget = nil
 					else

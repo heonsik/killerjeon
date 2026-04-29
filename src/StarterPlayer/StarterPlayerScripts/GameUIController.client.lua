@@ -7,16 +7,21 @@ local playerGui = player:WaitForChild("PlayerGui")
 local GameConfig = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("GameConfig"))
 
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
-local gameStateChanged = remotes:WaitForChild("GameStateChanged")
-local timerChanged = remotes:WaitForChild("TimerChanged")
+local gameStateChanged  = remotes:WaitForChild("GameStateChanged")
+local timerChanged      = remotes:WaitForChild("TimerChanged")
 local aliveCountChanged = remotes:WaitForChild("AliveCountChanged")
-local objectiveChanged = remotes:WaitForChild("ObjectiveChanged")
+local objectiveChanged  = remotes:WaitForChild("ObjectiveChanged")
 local eventAnnouncement = remotes:WaitForChild("EventAnnouncement")
-local powerupChanged = remotes:WaitForChild("PowerupChanged")
-local roundResult = remotes:WaitForChild("RoundResult")
-local playerEliminated = remotes:WaitForChild("PlayerEliminated")
-local dangerAlert = remotes:WaitForChild("DangerAlert")
+local powerupChanged    = remotes:WaitForChild("PowerupChanged")
+local roundResult       = remotes:WaitForChild("RoundResult")
+local playerEliminated  = remotes:WaitForChild("PlayerEliminated")
+local dangerAlert       = remotes:WaitForChild("DangerAlert")
 local announcementEvent = remotes:WaitForChild("Announcement")
+local detectionLevelEv  = remotes:WaitForChild("DetectionLevel")
+local detectionAlertEv  = remotes:WaitForChild("DetectionAlert")
+local difficultyChangedEv = remotes:WaitForChild("DifficultyChanged")
+local setDifficultyEv   = remotes:WaitForChild("SetDifficulty")
+local respawnRequestEv  = remotes:WaitForChild("RespawnRequest")
 
 local stateTextByKey = {
 	Waiting = "대기 중",
@@ -260,11 +265,11 @@ timerChanged.OnClientEvent:Connect(function(seconds, label)
 end)
 
 aliveCountChanged.OnClientEvent:Connect(function(aliveCount, totalCount)
-	aliveLabel.Text = string.format("생존 %d/%d", aliveCount or 0, totalCount or 0)
+	aliveLabel.Text = string.format("미로 안 %d/%d", aliveCount or 0, totalCount or 0)
 end)
 
 objectiveChanged.OnClientEvent:Connect(function(current, required)
-	objectiveLabel.Text = string.format("코어 %d/%d", current or 0, required or 3)
+	objectiveLabel.Text = string.format("탈출 %d/%d", current or 0, required or 1)
 end)
 
 powerupChanged.OnClientEvent:Connect(function(message, duration)
@@ -303,21 +308,6 @@ roundResult.OnClientEvent:Connect(function(_, message)
 	end
 end)
 
-playerEliminated.OnClientEvent:Connect(function()
-	eliminatedOverlay.Visible = true
-	eliminatedOverlay.BackgroundTransparency = 0.35
-
-	task.delay(0.8, function()
-		TweenService:Create(eliminatedOverlay, TweenInfo.new(1.2), {
-			BackgroundTransparency = 1,
-		}):Play()
-
-		task.delay(1.3, function()
-			eliminatedOverlay.Visible = false
-		end)
-	end)
-end)
-
 local dangerFadeToken = 0
 dangerAlert.OnClientEvent:Connect(function(distance)
 	local ratio = math.clamp(1 - (distance / GameConfig.ChaserDangerRadius), 0, 1)
@@ -346,6 +336,243 @@ end)
 
 stateLabel.Text = "대기 중"
 timerLabel.Text = "자동 시작"
-aliveLabel.Text = "생존 0/0"
-objectiveLabel.Text = "코어 0/3"
+aliveLabel.Text = "미로 안 0/0"
+objectiveLabel.Text = "탈출 0/1"
 powerupLabel.Text = "아이템 없음"
+
+-- ── 발각 미터 ─────────────────────────────────────────────────────────────────
+
+local detectionBg = Instance.new("Frame")
+detectionBg.Name = "DetectionBg"
+detectionBg.AnchorPoint = Vector2.new(0.5, 1)
+detectionBg.Position = UDim2.fromScale(0.5, 0.97)
+detectionBg.Size = UDim2.fromOffset(320, 22)
+detectionBg.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+detectionBg.BackgroundTransparency = 0.2
+detectionBg.BorderSizePixel = 0
+detectionBg.ZIndex = 5
+detectionBg.Parent = gui
+
+Instance.new("UICorner", detectionBg).CornerRadius = UDim.new(0, 5)
+
+local detectionBar = Instance.new("Frame")
+detectionBar.Name = "DetectionBar"
+detectionBar.Size = UDim2.fromScale(0, 1)
+detectionBar.BackgroundColor3 = Color3.fromRGB(90, 255, 90)
+detectionBar.BorderSizePixel = 0
+detectionBar.ZIndex = 6
+detectionBar.Parent = detectionBg
+
+Instance.new("UICorner", detectionBar).CornerRadius = UDim.new(0, 4)
+
+local detectionLabel = Instance.new("TextLabel")
+detectionLabel.Size = UDim2.fromScale(1, 1)
+detectionLabel.BackgroundTransparency = 1
+detectionLabel.Text = "감시"
+detectionLabel.TextColor3 = Color3.fromRGB(230, 230, 230)
+detectionLabel.TextScaled = true
+detectionLabel.Font = Enum.Font.GothamBold
+detectionLabel.ZIndex = 7
+detectionLabel.Parent = detectionBg
+
+-- ── 발각됨 경고 ───────────────────────────────────────────────────────────────
+
+local detectedBanner = Instance.new("TextLabel")
+detectedBanner.Name = "DetectedBanner"
+detectedBanner.AnchorPoint = Vector2.new(0.5, 0)
+detectedBanner.Position = UDim2.fromScale(0.5, 0.08)
+detectedBanner.Size = UDim2.fromOffset(400, 60)
+detectedBanner.BackgroundColor3 = Color3.fromRGB(180, 20, 20)
+detectedBanner.BackgroundTransparency = 0.1
+detectedBanner.BorderSizePixel = 0
+detectedBanner.TextColor3 = Color3.fromRGB(255, 255, 255)
+detectedBanner.TextScaled = true
+detectedBanner.Font = Enum.Font.GothamBlack
+detectedBanner.Text = "⚠ 발각됨!"
+detectedBanner.Visible = false
+detectedBanner.ZIndex = 12
+detectedBanner.Parent = gui
+Instance.new("UICorner", detectedBanner).CornerRadius = UDim.new(0, 8)
+
+-- ── 난이도 선택 ───────────────────────────────────────────────────────────────
+
+local difficultyPanel = Instance.new("Frame")
+difficultyPanel.Name = "DifficultyPanel"
+difficultyPanel.AnchorPoint = Vector2.new(0.5, 1)
+difficultyPanel.Position = UDim2.fromScale(0.5, 0.92)
+difficultyPanel.Size = UDim2.fromOffset(400, 52)
+difficultyPanel.BackgroundColor3 = Color3.fromRGB(18, 22, 30)
+difficultyPanel.BackgroundTransparency = 0.1
+difficultyPanel.BorderSizePixel = 0
+difficultyPanel.ZIndex = 4
+difficultyPanel.Visible = true
+difficultyPanel.Parent = gui
+Instance.new("UICorner", difficultyPanel).CornerRadius = UDim.new(0, 8)
+
+local diffLayout = Instance.new("UIListLayout")
+diffLayout.FillDirection = Enum.FillDirection.Horizontal
+diffLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+diffLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+diffLayout.Padding = UDim.new(0, 6)
+diffLayout.Parent = difficultyPanel
+Instance.new("UIPadding", difficultyPanel).PaddingLeft = UDim.new(0, 8)
+
+local difficultyColors = {
+	Easy   = { bg = Color3.fromRGB(46, 160, 78),  text = "쉬움" },
+	Normal = { bg = Color3.fromRGB(210, 140, 30),  text = "보통" },
+	Hard   = { bg = Color3.fromRGB(180, 40, 40),   text = "어려움" },
+}
+local difficultyOrder = {"Easy", "Normal", "Hard"}
+local diffButtons = {}
+
+for _, key in ipairs(difficultyOrder) do
+	local info = difficultyColors[key]
+	local btn = Instance.new("TextButton")
+	btn.Name = key
+	btn.Size = UDim2.fromOffset(116, 36)
+	btn.BackgroundColor3 = info.bg
+	btn.BackgroundTransparency = 0.3
+	btn.BorderSizePixel = 0
+	btn.Text = info.text
+	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	btn.TextScaled = true
+	btn.Font = Enum.Font.GothamBold
+	btn.ZIndex = 5
+	btn.Parent = difficultyPanel
+	Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
+	diffButtons[key] = btn
+
+	btn.MouseButton1Click:Connect(function()
+		setDifficultyEv:FireServer(key)
+	end)
+end
+
+-- ── 리스폰 화면 ───────────────────────────────────────────────────────────────
+
+local respawnScreen = Instance.new("Frame")
+respawnScreen.Name = "RespawnScreen"
+respawnScreen.Size = UDim2.fromScale(1, 1)
+respawnScreen.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+respawnScreen.BackgroundTransparency = 0.5
+respawnScreen.BorderSizePixel = 0
+respawnScreen.ZIndex = 25
+respawnScreen.Visible = false
+respawnScreen.Parent = gui
+
+local deadText = Instance.new("TextLabel")
+deadText.AnchorPoint = Vector2.new(0.5, 0.4)
+deadText.Position = UDim2.fromScale(0.5, 0.4)
+deadText.Size = UDim2.fromOffset(500, 80)
+deadText.BackgroundTransparency = 1
+deadText.Text = "탈락"
+deadText.TextColor3 = Color3.fromRGB(220, 40, 40)
+deadText.TextScaled = true
+deadText.Font = Enum.Font.GothamBlack
+deadText.ZIndex = 26
+deadText.Parent = respawnScreen
+
+local respawnBtn = Instance.new("TextButton")
+respawnBtn.AnchorPoint = Vector2.new(0.5, 0.5)
+respawnBtn.Position = UDim2.fromScale(0.5, 0.58)
+respawnBtn.Size = UDim2.fromOffset(260, 58)
+respawnBtn.BackgroundColor3 = Color3.fromRGB(46, 160, 78)
+respawnBtn.BackgroundTransparency = 0.05
+respawnBtn.BorderSizePixel = 0
+respawnBtn.Text = "리스폰"
+respawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+respawnBtn.TextScaled = true
+respawnBtn.Font = Enum.Font.GothamBlack
+respawnBtn.ZIndex = 26
+respawnBtn.Parent = respawnScreen
+Instance.new("UICorner", respawnBtn).CornerRadius = UDim.new(0, 10)
+
+local respawnToken = 0
+
+local function requestRespawn()
+	respawnScreen.Visible = false
+	respawnRequestEv:FireServer()
+end
+
+respawnBtn.MouseButton1Click:Connect(requestRespawn)
+
+-- ── 이벤트 핸들러 ─────────────────────────────────────────────────────────────
+
+local currentDetection = 0
+
+detectionLevelEv.OnClientEvent:Connect(function(level)
+	currentDetection = level
+	local barColor
+	if level < 0.5 then
+		barColor = Color3.fromRGB(90, 255, 90)
+	elseif level < 0.85 then
+		barColor = Color3.fromRGB(255, 200, 40)
+	else
+		barColor = Color3.fromRGB(255, 50, 50)
+	end
+	TweenService:Create(detectionBar, TweenInfo.new(0.15), {
+		Size = UDim2.fromScale(level, 1),
+		BackgroundColor3 = barColor,
+	}):Play()
+end)
+
+detectionAlertEv.OnClientEvent:Connect(function()
+	detectedBanner.Visible = true
+	TweenService:Create(detectedBanner, TweenInfo.new(0.1), { BackgroundTransparency = 0 }):Play()
+	task.delay(2.5, function()
+		TweenService:Create(detectedBanner, TweenInfo.new(0.5), { BackgroundTransparency = 1 }):Play()
+		task.delay(0.55, function()
+			detectedBanner.Visible = false
+		end)
+	end)
+end)
+
+difficultyChangedEv.OnClientEvent:Connect(function(difficulty)
+	for key, btn in pairs(diffButtons) do
+		local info = difficultyColors[key]
+		if key == difficulty then
+			btn.BackgroundTransparency = 0
+			btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+		else
+			btn.BackgroundTransparency = 0.55
+			btn.TextColor3 = Color3.fromRGB(180, 180, 180)
+		end
+	end
+end)
+
+playerEliminated.OnClientEvent:Connect(function()
+	respawnToken += 1
+	local token = respawnToken
+	-- 기존 빨간 오버레이
+	eliminatedOverlay.Visible = true
+	eliminatedOverlay.BackgroundTransparency = 0.35
+	task.delay(0.8, function()
+		TweenService:Create(eliminatedOverlay, TweenInfo.new(1.2), { BackgroundTransparency = 1 }):Play()
+		task.delay(1.3, function()
+			eliminatedOverlay.Visible = false
+		end)
+	end)
+	-- 리스폰 화면 표시
+	task.delay(GameConfig.EliminationDisplayTime, function()
+		if respawnToken ~= token then
+			return
+		end
+		respawnScreen.Visible = true
+		task.delay(0.4, function()
+			if respawnToken == token and respawnScreen.Visible then
+				requestRespawn()
+			end
+		end)
+	end)
+end)
+
+detectionBg.Visible = false
+
+gameStateChanged.OnClientEvent:Connect(function(nextState)
+	difficultyPanel.Visible = (nextState == "Waiting")
+	detectionBg.Visible     = (nextState == "Playing")
+	if nextState == "Finished" or nextState == "Waiting" then
+		respawnToken += 1
+		respawnScreen.Visible = false
+		detectionBar.Size = UDim2.fromScale(0, 1)
+	end
+end)
